@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.github.ideahut</groupId>
+	<version>2.0.0</version>
+
+	<artifactId>sbms-hessian</artifactId>
+	<packaging>jar</packaging>
+
+	<name>sbms-hessian</name>
+	<description>Custom Hessian for microservice (Spring Boot)</description>
+	<url>https://github.com/ideahut/sbms-hessian</url>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	
+	<scm>
+		<developerConnection>scm:git:ssh://github.com/ideahut/sbms-hessian.git</developerConnection>
+		<connection>${project.scm.developerConnection}</connection>
+		<url>${project.url}</url>
+	</scm>
+	
+	<developers>
+		<developer>
+			<id>thomson.na7pulu</id>
+			<name>Thomson Napitupulu</name>
+			<email>thomson.na7pulu@gmail.com</email>
+			<organization>Ideahut</organization>
+			<organizationUrl>https://github.com/ideahut</organizationUrl>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+		</developer>
+	</developers>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.target>1.6</maven.compiler.target>
+        <maven.compiler.source>1.6</maven.compiler.source>
+		<java.version>1.6</java.version>
+	</properties>
+	
+	<dependencies>
+		
+	    <!-- HESSIAN -->
+		<dependency>
+		    <groupId>com.caucho</groupId>
+		    <artifactId>hessian</artifactId>
+		     <version>4.0.60</version>
+		     <scope>provided</scope>
+		</dependency>
+		
+	</dependencies>	
+	
+</project>
