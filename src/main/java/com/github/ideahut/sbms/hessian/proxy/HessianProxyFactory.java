@@ -1,4 +1,4 @@
-package com.github.ideahut.sbms.hessian.client;
+package com.github.ideahut.sbms.hessian.proxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
@@ -10,6 +10,7 @@ import com.caucho.hessian.client.HessianConnection;
 import com.caucho.hessian.client.HessianMetaInfoAPI;
 import com.caucho.hessian.client.HessianRuntimeException;
 import com.caucho.hessian.io.HessianRemoteObject;
+import com.github.ideahut.sbms.client.service.ServiceProxyHeader;
 
 public class HessianProxyFactory extends com.caucho.hessian.client.HessianProxyFactory {
 	
@@ -74,14 +75,14 @@ public class HessianProxyFactory extends com.caucho.hessian.client.HessianProxyF
 		
 		@Override
 		protected void addRequestHeaders(HessianConnection conn) {
-			Map<String, String> headers = HessianRequestHeader.get();
+			Map<String, String> headers = ServiceProxyHeader.get();
 			if (headers != null) {
 				for (String key : headers.keySet()) {
 					conn.addHeader(key, headers.get(key));
 				}
-			}
-			super.addRequestHeaders(conn);
-			HessianRequestHeader.remove();
+				ServiceProxyHeader.remove();
+			}			
+			super.addRequestHeaders(conn);			
 		}
 	}	
 }

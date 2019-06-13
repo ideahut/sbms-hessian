@@ -1,4 +1,4 @@
-package com.github.ideahut.sbms.hessian.client;
+package com.github.ideahut.sbms.hessian.proxy;
 
 public class HessianProxyFactoryBean extends org.springframework.remoting.caucho.HessianProxyFactoryBean {
 
